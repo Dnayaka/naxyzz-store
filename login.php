@@ -50,40 +50,17 @@ $conn->close();
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-    .loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #333333;
-        transition: opacity 0.75s, visibility 0.75s;
+      body {
+        animation: transitionIn 1s;
       }
 
-      .loader--hidden {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .loader::after {
-        content: "";
-        width: 75px;
-        height: 75px;
-        border: 15px solid #dddddd;
-        border-top-color: #009578;
-        border-radius: 50%;
-        animation: loading 0.75s ease infinite;
-      }
-
-      @keyframes loading {
+      @keyframes transitionIn {
         from {
-          transform: rotate(0turn);
-        }
-        to {
-          transform: rotate(1turn);
+          opacity: 0;
+          transform: rotateX(-10deg);
+        } to {
+          opacity: 1;
+          transform: rotateX(0);
         }
       }
 
@@ -170,7 +147,6 @@ $conn->close();
     <link href="sign-in.css" rel="stylesheet">
   </head>
   <body class="d-flex align-items-center py-4 bg-body-tertiary">
-  <div class="loader"></div>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -248,7 +224,7 @@ $conn->close();
       </label>
     </div>
     <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-body-secondary"><a  style="text-decoration:none" href="register">don't have an account yet?</a></p> 
+    <p class="mt-5 mb-3 text-body-secondary"><a  style="text-decoration:none" href="register.php">don't have an account yet?</a></p> 
     <p class="mt-5 mb-3 text-body-secondary">&copy; 2024 - 2034</p>
   </form>
 </main>
@@ -260,16 +236,6 @@ $conn->close();
            disclaimer.remove();
        }  
      });
-    
-    window.addEventListener("load", () => {
-      const loader = document.querySelector(".loader");
-
-      loader.classList.add("loader--hidden");
-
-      loader.addEventListener("transitionend", () => {
-        document.body.removeChild(loader);
-      });
-    });
 
 </script>
     </body>

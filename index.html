@@ -1,6 +1,7 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
-  <head><script src="/assets/js/color-modes.js"></script>
+<html translate="no" lang="id" data-bs-theme="light">
+  <head><script src="../assets/js/color-modes.js"></script>
+    
     <link rel="icon" href="2.png"></link>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,45 +16,25 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-<link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-    .loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #333333;
-        transition: opacity 0.75s, visibility 0.75s;
+    
+      body { 
+        animation: transitionIn 1s;
       }
 
-      .loader--hidden {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .loader::after {
-        content: "";
-        width: 75px;
-        height: 75px;
-        border: 15px solid #dddddd;
-        border-top-color: #009578;
-        border-radius: 50%;
-        animation: loading 0.75s ease infinite;
-      }
-
-      @keyframes loading {
+      @keyframes transitionIn {
         from {
-          transform: rotate(0turn);
-        }
-        to {
-          transform: rotate(1turn);
+          opacity: 0;
+          transform: rotateX(-10deg);
+        } to {
+          opacity: 1;
+          transform: rotateX(0);
         }
       }
+
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -172,7 +153,12 @@
     <!-- Custom styles for this template -->
     <link href="headers.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="p-1 m-1">
+    <!-- Custom Alerts
+    <div id="liveAlertPlaceholder"></div>
+    <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+    -->
+
     <div class="loader"></div>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="bootstrap" viewBox="0 0 118 94">
@@ -273,12 +259,12 @@
       
       <ul class="nav me-auto">
         <li class="nav-item"><a href="" class="nav-link link-body-emphasis px-2 active" aria-current="page">Dashboards</a></li>
-        <li class="nav-item"><a href="topup" class="nav-link link-body-emphasis px-2">Games</a></li>
-        <li class="nav-item"><a href="about" class="nav-link link-body-emphasis px-2">About</a></li>
+        <li class="nav-item"><a href="topup.html" class="nav-link link-body-emphasis px-2">Games</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link link-body-emphasis px-2">About</a></li>
       </ul>
       <ul class="nav">
         <li class="nav-item"><a href="login" class="nav-link link-body-emphasis px-2">Login</a></li>
-        <li class="nav-item"><a href="register" class="nav-link link-body-emphasis px-2">Register</a></li>
+        <li class="nav-item"><a href="register.php" class="nav-link link-body-emphasis px-2">Register</a></li>
       </ul>
     </div>
   </nav>
@@ -287,9 +273,7 @@
       <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
         <img id="myImage" width="50"  height="100%" src="2.png" alt="logo">
         <span class="fs-4">‎ ‎ ‎ ‎ NAXYZZ | STORE</span>
-
       </a>
-      
     </div>
   </header>
   
@@ -302,10 +286,33 @@
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Naxyzz Store</h1>
         <p class="lead">Top Up Cepat, Amanah, dan Legal Top up game online Anda dengan mudah, cepat, dan aman di Naxyzz Store! Kami adalah toko online terpercaya yang menyediakan berbagai layanan top up untuk berbagai game populer, seperti Mobile Legends, Free Fire, PUBG Mobile, dan masih banyak lagi.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="topup" style="text-decoration: none;">
+          <a href="topup.html" style="text-decoration: none;">
             <button class="button-74" role="button" >Games</button>
           </a>
         </div>
+        <!-- Button trigger modal -->
+        
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Promo!!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="contoh.webp" class="img-fluid" alt="popup" style="border-radius: 10%;">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="dontShowButton" data-bs-dismiss="modal">Jangan Tampilkan</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Wow!!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
       </div>
     </div>
   </div>
@@ -329,7 +336,7 @@
 
 
 </main>
-<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
 
 <script>
@@ -357,16 +364,52 @@
     myImage.src = '2.png';
   });
 
-  window.addEventListener("load", () => {
-    const loader = document.querySelector(".loader");
+  const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+  const appendAlert = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
 
-    loader.classList.add("loader--hidden");
+    alertPlaceholder.append(wrapper)
+  }
 
-    loader.addEventListener("transitionend", () => {
-      document.body.removeChild(loader);
-    });
-  });
+  const alertTrigger = document.getElementById('liveAlertBtn')
+  if (alertTrigger) {
+    alertTrigger.addEventListener('click', () => {
+      appendAlert('Nice, you triggered this alert message!', 'success')
+    })
+  }
 
+  document.addEventListener('DOMContentLoaded', function () {
+            const hideModalTimestamp = localStorage.getItem('hideModalTimestamp');
+            const currentTime = new Date().getTime();
+
+            // If there's a timestamp and it's been less than 24 hours, don't show the modal
+            if (hideModalTimestamp && currentTime - hideModalTimestamp < 24 * 60 * 60 * 1000) {
+                // Less than 24 hours have passed
+                return;
+            } else {
+                // More than 24 hours have passed, remove the timestamp
+                localStorage.removeItem('hideModalTimestamp');
+            }
+
+            // Show the modal if no recent hide timestamp
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+                keyboard: false
+            });
+            myModal.show();
+
+            
+
+            document.getElementById('dontShowButton').addEventListener('click', function () {
+                localStorage.setItem('hideModalTimestamp', new Date().getTime());
+            });
+        });
+  
   Sharect.appendCustomShareButtons([{
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 478.165 478.165"><path d="M478.165 232.946c0 128.567-105.057 232.966-234.679 232.966-41.102 0-79.814-10.599-113.445-28.969L0 478.165l42.437-125.04c-21.438-35.065-33.77-76.207-33.77-120.159C8.667 104.34 113.763 0 243.485 0c129.623 0 234.68 104.34 234.68 232.946zM243.485 37.098c-108.802 0-197.422 87.803-197.422 195.868 0 42.915 13.986 82.603 37.576 114.879l-24.586 72.542 75.849-23.968c31.121 20.481 68.457 32.296 108.583 32.296 108.723 0 197.323-87.843 197.323-195.908 0-107.886-88.6-195.709-197.323-195.709zM361.931 286.62c-1.395-2.331-5.22-3.746-10.898-6.814-5.917-2.849-34.089-16.497-39.508-18.37-5.16-1.913-8.986-2.849-12.811 2.829-4.005 5.638-14.903 18.629-18.23 22.354-3.546 3.785-6.854 4.264-12.552 1.435-5.618-2.809-24.267-8.866-46.203-28.391-17.055-15.042-28.67-33.711-31.997-39.508-3.427-5.758-.398-8.826 2.471-11.635 2.69-2.59 5.778-6.734 8.627-10.041 2.969-3.287 3.905-5.638 5.798-9.424 1.913-3.905.936-7.192-.478-10.141-1.415-2.849-13.01-30.881-17.752-42.337-4.841-11.416-9.543-9.523-12.871-9.523-3.467 0-7.212-.478-11.117-.478-3.785 0-10.041 1.395-15.381 7.192-5.2 5.658-20.123 19.465-20.123 47.597 0 28.052 20.601 55.308 23.55 59.053 2.869 3.785 39.747 63.197 98.303 86.07 58.476 22.872 58.476 15.321 69.115 14.365 10.38-.956 34.069-13.867 38.811-27.096 4.66-13.45 4.66-24.766 3.246-27.137z"/></svg>',
     url: 'https://api.whatsapp.com/send?text=TEXT_SELECTION%20PAGE_URL'

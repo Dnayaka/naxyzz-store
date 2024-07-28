@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
-  <head><script src="../assets/js/color-modes.js"></script>
+<html lang="en" translate="no" data-bs-theme="light">
+  <head><script src="../../assets/js/color-modes.js"></script>
     <link rel="icon" href="2.png"></link>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,45 +16,23 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      .loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #333333;
-        transition: opacity 0.75s, visibility 0.75s;
+      body {
+        animation: transitionIn 1s;
       }
 
-      .loader--hidden {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .loader::after {
-        content: "";
-        width: 75px;
-        height: 75px;
-        border: 15px solid #dddddd;
-        border-top-color: #009578;
-        border-radius: 50%;
-        animation: loading 0.75s ease infinite;
-      }
-
-      @keyframes loading {
+      @keyframes transitionIn {
         from {
-          transform: rotate(0turn);
-        }
-        to {
-          transform: rotate(1turn);
+          opacity: 0;
+          transform: rotateX(-10deg);
+        } to {
+          opacity: 1;
+          transform: rotateX(0);
         }
       }
+    
 
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -136,8 +114,8 @@
 
     
   </head>
-  <body>
-    <div class="loader"></div>
+  <body class="p-1 m-1">
+    
     <link href="headers.css" rel="stylesheet">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="bootstrap" viewBox="0 0 118 94">
@@ -225,13 +203,13 @@
       
       
       <ul class="nav me-auto">
-        <li class="nav-item"><a href="./index" class="nav-link link-body-emphasis px-2 active" aria-current="page">Dashboards</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link link-body-emphasis px-2 active" aria-current="page">Dashboards</a></li>
         <li class="nav-item"><a href="" class="nav-link link-body-emphasis px-2">Games</a></li>
-        <li class="nav-item"><a href="about" class="nav-link link-body-emphasis px-2">About</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link link-body-emphasis px-2">About</a></li>
       </ul>
       <ul class="nav">
-        <li class="nav-item"><a href="login" class="nav-link link-body-emphasis px-2">Login</a></li>
-        <li class="nav-item"><a href="register" class="nav-link link-body-emphasis px-2">Register</a></li>
+        <li class="nav-item"><a href="login.php" class="nav-link link-body-emphasis px-2">Login</a></li>
+        <li class="nav-item"><a href="register.php" class="nav-link link-body-emphasis px-2">Register</a></li>
       </ul>
       
     </div>
@@ -274,7 +252,7 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
-            <img src="assets/images/6.png" style="border-radius: 2%;" alt="genshin impact">
+            <img src="../assets/images/6.png" style="border-radius: 2%;" alt="genshin impact">
             <div class="card-body">
               <h1>Genshin Impact</h1>
               <p class="card-text">Genshin Impact adalah game RPG open world bergaya anime. Kamu menjelajahi dunia fantasi luas bernama Teyvat, bertemu berbagai karakter unik, dan bertarung lawan musuh kuat. Yang menarik, kamu bisa mengendalikan 4 karakter berbeda dalam tim dan bertukar cepat saat bertarung.</p>
@@ -290,7 +268,7 @@
         </div>
         <div class="col">
           <div class="card shadow-sm">
-            <img src="assets/images/free-fire.webp" style="border-radius: 2%;" alt="free-fire">
+            <img src="../assets/images/free-fire.webp" style="border-radius: 2%;" alt="free-fire">
             <div class="card-body">
               <h1>Free Fire</h1>
               <p class="card-text">Free Fire adalah game battle royale gratis di handphone, dimana 50 pemain terjun ke pulau dan harus saling menghabisi untuk menjadi yang terakhir bertahan.  Kamu bisa kendarai kendaraan, sembunyi, atau nembak lawan untuk menang.  Gamenya cepat, menegangkan, dan seru!</p>
@@ -306,7 +284,7 @@
         </div>
         <div class="col">
           <div class="card shadow-sm">
-            <img src="assets/images/mobile-legends.jpg" style="border-radius: 2%;" alt="mobile-legends">
+            <img src="../assets/images/mobile-legends.jpg" style="border-radius: 2%;" alt="mobile-legends">
             <div class="card-body">
               <h1>Mobile Legends</h1>
               <p class="card-text">Mobile Legends Bang Bang (MLBB) adalah game MOBA 5v5 di handphone.  Kamu dan 4 teman melawan tim lain, rebut jalur, hancurkan markas lawan, dan jagoin karakter unik (Hero) untuk menang.  Gamenya cepat, 10 menit - 15 menit per ronde, dan penuh strategi!</p>
@@ -323,7 +301,7 @@
 
         <div class="col">
           <div class="card shadow-sm">
-            <img src="assets/images/single-game.jpg" style="border-radius: 2%;" alt="cod">
+            <img src="../assets/images/single-game.jpg" style="border-radius: 2%;" alt="cod">
             <div class="card-body">
               <h1>Call Of Duty</h1>
               <p class="card-text">Call of Duty (COD) adalah seri game penembak orang pertama (FPS) yang terkenal dengan aksi menegangkan, cerita yang memikat, dan beragam mode permainan. Pertama kali dirilis pada tahun 2003, COD telah berkembang menjadi salah satu waralaba game paling ikonik di dunia, dengan jutaan pemain di seluruh penjuru.</p>
@@ -339,7 +317,7 @@
         </div>
         <div class="col">
           <div class="card shadow-sm">
-            <img src="assets/images/sg.png" style="border-radius: 2%;" alt="mobile-legends">
+            <img src="../assets/images/sg.png" style="border-radius: 2%;" alt="mobile-legends">
             <div class="card-body">
               <h1>Stumble Guys</h1>
               <p class="card-text">Stumble Guys is a massive multiplayer party knockout game, similar to Fall Guys, where you compete online with up to 32 other players. The goal is to overcome a series of increasingly difficult obstacle courses and challenges until one victor remains.</p>
@@ -399,16 +377,6 @@
     myImage.src = '2.png';
   });
 
-  window.addEventListener("load", () => {
-    const loader = document.querySelector(".loader");
-
-    loader.classList.add("loader--hidden");
-
-    loader.addEventListener("transitionend", () => {
-      document.body.removeChild(loader);
-    });
-  });
-
   Sharect.appendCustomShareButtons([{
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 478.165 478.165"><path d="M478.165 232.946c0 128.567-105.057 232.966-234.679 232.966-41.102 0-79.814-10.599-113.445-28.969L0 478.165l42.437-125.04c-21.438-35.065-33.77-76.207-33.77-120.159C8.667 104.34 113.763 0 243.485 0c129.623 0 234.68 104.34 234.68 232.946zM243.485 37.098c-108.802 0-197.422 87.803-197.422 195.868 0 42.915 13.986 82.603 37.576 114.879l-24.586 72.542 75.849-23.968c31.121 20.481 68.457 32.296 108.583 32.296 108.723 0 197.323-87.843 197.323-195.908 0-107.886-88.6-195.709-197.323-195.709zM361.931 286.62c-1.395-2.331-5.22-3.746-10.898-6.814-5.917-2.849-34.089-16.497-39.508-18.37-5.16-1.913-8.986-2.849-12.811 2.829-4.005 5.638-14.903 18.629-18.23 22.354-3.546 3.785-6.854 4.264-12.552 1.435-5.618-2.809-24.267-8.866-46.203-28.391-17.055-15.042-28.67-33.711-31.997-39.508-3.427-5.758-.398-8.826 2.471-11.635 2.69-2.59 5.778-6.734 8.627-10.041 2.969-3.287 3.905-5.638 5.798-9.424 1.913-3.905.936-7.192-.478-10.141-1.415-2.849-13.01-30.881-17.752-42.337-4.841-11.416-9.543-9.523-12.871-9.523-3.467 0-7.212-.478-11.117-.478-3.785 0-10.041 1.395-15.381 7.192-5.2 5.658-20.123 19.465-20.123 47.597 0 28.052 20.601 55.308 23.55 59.053 2.869 3.785 39.747 63.197 98.303 86.07 58.476 22.872 58.476 15.321 69.115 14.365 10.38-.956 34.069-13.867 38.811-27.096 4.66-13.45 4.66-24.766 3.246-27.137z"/></svg>',
     url: 'https://api.whatsapp.com/send?text=TEXT_SELECTION%20PAGE_URL'
@@ -426,7 +394,7 @@
 </script>
 
 
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>

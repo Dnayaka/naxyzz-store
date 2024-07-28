@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="id" translate="no" data-bs-theme="auto">
   <head><script src="../assets/js/color-modes.js"></script>
 
     <link rel="icon" href="2.png"></link>
@@ -19,40 +19,17 @@
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-    .loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #333333;
-        transition: opacity 0.75s, visibility 0.75s;
+      body {
+        animation: transitionIn 1s;
       }
 
-      .loader--hidden {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .loader::after {
-        content: "";
-        width: 75px;
-        height: 75px;
-        border: 15px solid #dddddd;
-        border-top-color: #009578;
-        border-radius: 50%;
-        animation: loading 0.75s ease infinite;
-      }
-
-      @keyframes loading {
+      @keyframes transitionIn {
         from {
-          transform: rotate(0turn);
-        }
-        to {
-          transform: rotate(1turn);
+          opacity: 0;
+          transform: rotateX(-10deg);
+        } to {
+          opacity: 1;
+          transform: rotateX(0);
         }
       }
 
@@ -138,8 +115,7 @@
     <!-- Custom styles for this template -->
     <link href="checkout.css" rel="stylesheet">
   </head>
-  <body class="bg-body-tertiary">
-    <div class="loader"></div>
+  <body class="p-1 m-1" class="bg-body-tertiary">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="bootstrap" viewBox="0 0 118 94">
         <title>Naxyzz</title>
@@ -483,16 +459,6 @@
   });
   auto.addEventListener('click', () => {
     myImage.src = '2.png';
-  });
-
-  window.addEventListener("load", () => {
-    const loader = document.querySelector(".loader");
-
-    loader.classList.add("loader--hidden");
-
-    loader.addEventListener("transitionend", () => {
-      document.body.removeChild(loader);
-    });
   });
 
   Sharect.appendCustomShareButtons([{

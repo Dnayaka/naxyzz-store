@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html translate="no" lang="id" data-bs-theme="light">
   <head><script src="../assets/js/color-modes.js"></script>
     <link rel="icon" href="2.png"></link>
     <meta charset="utf-8">
@@ -18,40 +18,17 @@
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      .loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #333333;
-        transition: opacity 0.75s, visibility 0.75s;
+      body {
+        animation: transitionIn 1s;
       }
 
-      .loader--hidden {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .loader::after {
-        content: "";
-        width: 75px;
-        height: 75px;
-        border: 15px solid #dddddd;
-        border-top-color: #009578;
-        border-radius: 50%;
-        animation: loading 0.75s ease infinite;
-      }
-
-      @keyframes loading {
+      @keyframes transitionIn {
         from {
-          transform: rotate(0turn);
-        }
-        to {
-          transform: rotate(1turn);
+          opacity: 0;
+          transform: rotateX(-10deg);
+        } to {
+          opacity: 1;
+          transform: rotateX(0);
         }
       }
 
@@ -176,8 +153,8 @@
     <!-- Custom styles for this template -->
     <link href="headers.css" rel="stylesheet">
   </head>
-  <body>
-    <div class="loader"></div>
+  <body class="p-1 m-1">
+
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="bootstrap" viewBox="0 0 118 94">
         <title>Naxyzz</title>
@@ -276,13 +253,13 @@
     <div class="container d-flex flex-wrap">
       
       <ul class="nav me-auto">
-        <li class="nav-item"><a href="" class="nav-link link-body-emphasis px-2 active" aria-current="page">Dashboards</a></li>
-        <li class="nav-item"><a href="topup" class="nav-link link-body-emphasis px-2">Games</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link link-body-emphasis px-2 active" aria-current="page">Dashboards</a></li>
+        <li class="nav-item"><a href="topup.html" class="nav-link link-body-emphasis px-2">Games</a></li>
+        <li class="nav-item"><a href="" class="nav-link link-body-emphasis px-2">About</a></li>
       </ul>
       <ul class="nav">
-        <li class="nav-item"><a href="login" class="nav-link link-body-emphasis px-2">Login</a></li>
-        <li class="nav-item"><a href="register" class="nav-link link-body-emphasis px-2">Register</a></li>
+        <li class="nav-item"><a href="login.php" class="nav-link link-body-emphasis px-2">Login</a></li>
+        <li class="nav-item"><a href="register.php" class="nav-link link-body-emphasis px-2">Register</a></li>
       </ul>
     </div>
   </nav>
@@ -304,7 +281,7 @@
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About Me...</h1>
-        <p class="lead">I'am is a frontend developer, i just want to created a website, that website is useless, that i sell this website, you get a free domain and hosting!.</p>
+        <p class="lead">I'am is a frontend developer, i just want to created a website. Yeah, i just bored....</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <a href="topup" style="text-decoration: none;">
             <button class="button-74" role="button" >Games</button>
@@ -357,16 +334,6 @@
     myImage2.src = '2.png';
     myImage.src = '2.png';
     myimage.src = '2.png';
-  });
-
-  window.addEventListener("load", () => {
-    const loader = document.querySelector(".loader");
-
-    loader.classList.add("loader--hidden");
-
-    loader.addEventListener("transitionend", () => {
-      document.body.removeChild(loader);
-    });
   });
 
 
